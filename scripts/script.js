@@ -35,6 +35,20 @@ function closeMenu() {
   menuToggle.classList.remove("open");
 }
 
+/* ADD ACTIVE CLASS TO THE MENU
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+const menuLinks = document.querySelectorAll('.menu-link');
+menuLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    menuLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+    event.target.classList.add('active');
+  });
+});
+
+
 /* SHRINK NAVIGATION BAR SIZE WHEN SCROLLING DOWN
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 const scrollMenu = document.getElementById("scrollMenu");
@@ -54,8 +68,8 @@ window.addEventListener("scroll", function (e) {
 const heroImage = document.getElementById("heroImage");
 window.addEventListener("scroll", function (e) {
   if (
-    document.body.scrollTop > 100 ||
-    document.documentElement.scrollTop > 100
+    document.body.scrollTop > 1 ||
+    document.documentElement.scrollTop > 1
   ) {
     heroImage.classList.add("add_borderRadius_heroImage");
   } else {

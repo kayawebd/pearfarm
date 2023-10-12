@@ -25,14 +25,17 @@ picture {
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    background-color: white;
 }
 
 :root {
-    --header-color: #104910e8;
-    --footer-color: #104910e8;
+    --header-color: #104910f5;
+    --footer-color: #104910f5;
     --primary-color: #557c00;
+    --secondary-color: #F8E8A1;
     --main-border-radius: 16px;
 }
+
 
 /* Header/Navigation
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -83,12 +86,18 @@ header.scrolled .siteHeader {
 .siteHeader #menu ul li a {
     text-decoration: none;
     color: white;
+    transition: all 0.5s ease;
+}
+
+#menu ul li a:is(:focus, :hover) {
+    color: var(--secondary-color);
 }
 
 /* hamburger menu */
 .siteHeader #menuToggle {
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .siteHeader #menuToggle svg .line {
@@ -115,9 +124,47 @@ header.scrolled .siteHeader {
     z-index: 2;
 }
 
-.hero-text,
+.hero-text {
+    display: block;
+    font-size: clamp(2rem, 8vw, 8rem);
+    text-align: center;
+}
+
 .hero-button {
-    display: none;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: clamp(0.9em, 5vw, 1.3em);
+    border-radius: 30px;
+    padding: 20px 30px;
+    cursor: url('../assets/images/favicon.png'), pointer;
+    border: 1px solid var(--primary-color);
+}
+
+.hero-button:hover {
+    color: #fff;
+    background-color: #628f00;
+    transition: 0.5s all ease;
+}
+
+#heroImage {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url("../assets/images/hero_Image_Pear.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.add_borderRadius_heroImage {
+    border-radius: 0px 0px 50% 50%;
+    transition: all 3s ease;
 }
 
 @media only screen and (min-width:900px) {
@@ -127,10 +174,6 @@ header.scrolled .siteHeader {
         top: 0;
         z-index: 100;
         background-color: transparent;
-    }
-
-    #menu ul li a:is(:focus, :hover) {
-        color: var(--primary-color);
     }
 
     .siteHeader #menu ul li a {
@@ -156,7 +199,7 @@ header.scrolled .siteHeader {
     }
 
     header.scrolled {
-        background-color: #104910e8;
+        background-color: var(--header-color);
     }
 
     header.scrolled .siteHeader__logo img {
@@ -173,51 +216,6 @@ header.scrolled .siteHeader {
         max-width: 1268px;
         margin: auto;
     }
-
-    #heroImage {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url("../assets/images/hero_Image_Pear.webp");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 100vh;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        color: white;
-
-    }
-
-    .hero-text {
-        display: block;
-        font-size: 120px;
-        text-align: center;
-    }
-
-    .hero-button {
-        display: block;
-        text-decoration: none;
-        background-color: var(--primary-color);
-        color: white;
-        font-size: 1.3em;
-        border-radius: 30px;
-        padding: 20px 30px;
-        cursor: pointer;
-        border: 1px solid var(--primary-color);
-    }
-
-    .hero-button:hover {
-        color: #fff;
-        background-color: #628f00;
-        transition: 0.5s all ease;
-    }
-
-    .add_borderRadius_heroImage {
-        border-radius: 0px 0px 70px 70px;
-        transition: all 3s ease;
-    }
-
 }
 
 /* INTRO
@@ -340,7 +338,6 @@ main {}
 }
 
 .blog__cards .card article {
-    height: calc(100% - 400px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -639,15 +636,17 @@ main {}
 /* FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 footer {
-    background-color: #104910e8;
+    background-color: var(--footer-color);
     margin-top: 100px;
 }
 
 .footer {
     min-height: 95px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     align-items: center;
+    text-align: center;
     padding: 10px;
     color: white;
 }
@@ -664,8 +663,8 @@ footer {
 }
 
 footer .logo {
-    width: 60%;
-    height: 60%;
+    width: 40%;
+    height: 40%;
 }
 
 iframe {
@@ -681,12 +680,11 @@ iframe {
     }
 
     .footer {
-        padding: 0;
         min-height: 185px;
     }
 
     footer .logo {
-        width: 90%;
-        height: 90%;
+        /* width: 90%;
+        height: 90%; */
     }
 }
