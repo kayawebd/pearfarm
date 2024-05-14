@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 .sr-only:not(:focus) {
     clip: rect(1px, 1px, 1px, 1px);
     overflow: hidden;
@@ -259,6 +261,8 @@ main {}
     font-size: 1.2rem;
     line-height: 130%;
     text-decoration: underline;
+    text-align: right;
+    margin-bottom: 20px;
 }
 
 .viewMore a {
@@ -321,10 +325,6 @@ main {}
 .blog__top h2 {
     font-weight: 700;
     font-size: 2.074rem;
-}
-
-.blog__top .viewMore {
-    margin: 0;
 }
 
 .blog__cards {
@@ -427,6 +427,7 @@ main {}
     .blog__top {
         display: flex;
         justify-content: space-between;
+        padding: 2% 0;
     }
 
     .blog__heading h2 {
