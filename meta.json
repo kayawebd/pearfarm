@@ -1,5 +1,6 @@
 {
   "title": "Pear Farm",
   "description": "A easy and fast website build for farmers.",
-  "technologies": ["HTML", "CSS", "JavaScript"]
+  "technologies": ["HTML", "CSS", "JavaScript"],
+  "github": "https://github.com/kayawebd/pearfarm"
 }
